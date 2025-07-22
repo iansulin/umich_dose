@@ -71,6 +71,42 @@ The interface features a clean, vertically stacked layout with well-spaced secti
 
 ---
 
+### Customizing the Number of Surveys
+
+The `getRandomSurveyView()` function provides a flexible way to randomly present one survey from a predefined list. Each survey (e.g., `rand_survey_1()`, `rand_survey_2()`, etc.) represents a unique SwiftUI view. The function selects one of these at random using Swift’s `randomElement()` method, ensuring variability in user experience without any additional logic.
+
+To use all 5 surveys:
+```swift
+let views: [AnyView] = [
+    AnyView(rand_survey_1()),
+    AnyView(rand_survey_2()),
+    AnyView(rand_survey_3()),
+    AnyView(rand_survey_4()),
+    AnyView(rand_survey_5())
+]
+```
+
+To use only 3 surveys:
+```swift
+let views: [AnyView] = [
+    AnyView(rand_survey_1()),
+    AnyView(rand_survey_2()),
+    AnyView(rand_survey_3())
+]
+```
+
+The random selection occurs here:
+```swift
+return views.randomElement() ?? AnyView(EmptyView())
+```
+
+This mechanism makes it easy to customize the range of surveys being used—whether for A/B testing different survey layouts or simplifying the study for a specific population. No additional modifications are needed beyond changing the list.
+
+
+
+
+---
+
 ### Additional Key Components
 
 #### Environment & Observed Objects
