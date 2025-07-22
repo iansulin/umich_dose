@@ -7,6 +7,18 @@ The `HealthKitManager` is a singleton class responsible for:
 - Uploading this data to Firebase
 - Tracking upload status for user feedback
 
+**Sample Flow:**
+```text
+1. User taps "Sync Data"
+2. -> requestAuthorization()
+3. -> fetchStepCountData()
+     -> uploadHealthKitData("Steps")
+     -> fetchHeartRateData()
+         -> uploadHealthKitData("HeartRate")
+4. Anchors updated
+5. Status shows "Uploaded X records - ST/HR"
+```
+
 It integrates closely with:
 - **FirebaseManager.swift** – to handle actual uploads
 - **StorageManager.swift** – to persist anchors (last-uploaded timestamps)
@@ -78,49 +90,51 @@ d. Once steps are uploaded, triggers `fetchHeartRateData(...)` to continue the d
 
 ---
 
-### Anchors & Timestamps
+### Anchors, UI Feedback, Singleton, and Sample Flow
 
-* Used to **incrementally fetch** only new data:
-  - Stored in `StorageManager` under keys:
-    - `"HeartRateAnchor"`
-    - `"StepCountAnchor"`
-  - Updated after successful upload
-  - Adds a small buffer (20 seconds) to reduce duplicate/overlap records
+#### Anchors & Timestamps  
+To efficiently fetch **only new data incrementally**, the app uses anchors stored in `StorageManager` under keys like `"HeartRateAnchor"` and `"StepCountAnchor"`. These anchors represent the timestamp of the last successfully uploaded data sample. After each successful upload, the anchor is updated with a small buffer (typically 20 seconds) to reduce duplicate or overlapping records when querying HealthKit.
 
----
+#### UI Feedback  
+The app provides live status updates through the `@Published var healthKitStatus` property in `HealthKitManager`. This observable can be bound directly to SwiftUI UI elements (such as text labels) to inform the user about the current syncing state—e.g., authorizing, fetching data, uploading, or completed.
 
-### UI Feedback
-
-* Driven by the `@Published var healthKitStatus` observable:
-  - Updated throughout the process to reflect current state
-  - Can be bound to SwiftUI text labels for live feedback
-
----
-
-### Singleton Pattern
+#### Singleton Pattern  
+The `HealthKitManager` is implemented as a singleton to ensure a single, consistent instance manages HealthKit access and synchronization across the app. This is important to coordinate syncing actions triggered from multiple views or components.
 
 ```swift
 static let shared = HealthKitManager()
 ```
 
-This ensures that one consistent instance manages HealthKit access across your app — especially important when multiple views may trigger health data syncs.
-
 ---
 
-### Sample Flow
+### How to Get Other Types of HealthKit Data
 
-```text
-1. User taps "Sync Data"
-2. -> requestAuthorization()
-3. -> fetchStepCountData()
-     -> uploadHealthKitData("Steps")
-     -> fetchHeartRateData()
-         -> uploadHealthKitData("HeartRate")
-4. Anchors updated
-5. Status shows "Uploaded X records - ST/HR"
+#### 1. Request Authorization for New Data Types
+HealthKit requires explicit user permission for each type of health data your app wants to read or write. Currently, your `requestAuthorization` function requests authorization only for `.stepCount` and `.heartRate`. To get other types, you would add those `HKObjectType`s to the `allTypes` set, for example:
+
+```swift
+let newTypes: Set = [
+    HKObjectType.quantityType(forIdentifier: .sleepAnalysis)!,
+    HKObjectType.quantityType(forIdentifier: .bodyMass)!,
+    HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!
+]
+let allTypes = newTypes.union([
+    HKObjectType.quantityType(forIdentifier: .stepCount)!,
+    HKObjectType.quantityType(forIdentifier: .heartRate)!
+])
 ```
 
----
+#### 2. Fetch Data for the New Types  
+Reuse or extend the existing `fetchHealthKitData(dataType:completion:)` method to query the new data types. For quantity types, this works as is. For other sample types like sleep analysis (which uses `HKCategorySample`), implement similar queries tailored to those sample classes.
+
+#### 3. Handle Different Data Formats  
+Since HealthKit data can be of different sample classes (`HKQuantitySample`, `HKCategorySample`, etc.), adapt your data processing and upload logic to handle each type appropriately. This may include parsing different properties or metadata.
+
+#### 4. Manage Anchors and Syncing  
+Maintain anchor timestamps or other markers for each new data type to efficiently fetch only new or updated samples. This prevents redundant processing and conserves device resources.
+
+#### 5. Update UI and Status Reporting  
+Consider expanding your status enum (`HealthKitStatus`) and UI feedback mechanisms to inform users about the progress and success of syncing new data types.
 
 
 
@@ -129,19 +143,8 @@ This ensures that one consistent instance manages HealthKit access across your a
 
 
 
+[Back to Top](#overview-of-healthkitmanagerswift)
 
-
-
-
-
-
-
-
-
-
-
-
-[Back to Top](#top)
 
 
 
