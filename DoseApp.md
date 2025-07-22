@@ -1,6 +1,6 @@
 ## Overview of `DoseApp.swift`
 
-This code is the app’s **launchpad and notification manager**. It configures and maintains essential services like notifications and shared app state, processes user notification interactions, and integrates with Firebase and HealthKit managers to ensure smooth, reliable survey delivery and response tracking. The UI views reactively respond to changes in these managers, but this struct itself does not contain direct UI — it’s the engine driving app behavior behind the scenes.
+This code is the app’s **launchpad**. It configures and maintains essential services like notifications and shared app state, processes user notification interactions, and integrates with Firebase and HealthKit managers to ensure smooth, reliable survey delivery and response tracking. The UI views reactively respond to changes in these managers, but this struct itself does not contain direct UI — it’s the engine driving app behavior behind the scenes.
 
 ---
 
