@@ -36,13 +36,13 @@ The DOSE framework is a standalone Apple Watch app that enables real-time data c
 
 **Key features of the DOSE system include:**
 
-* Local-first data handling: All survey responses and sensor readings are first saved securely on the watch. The app then attempts to sync this data to your Firebase Realtime Database via REST API when a network connection becomes available.
-* In-watch surveys: The app displays scheduled ESM prompts directly on the Apple Watch using local notifications and a simple tap-based interface. Questions, options, and prompt timing are fully customizable in code.
-* Randomized prompt scheduling: A custom RandomScheduler class selects survey prompt times randomly within specified time windows, enhancing ecological validity.
-* Notification management: The framework dynamically manages scheduled notifications to work around watchOS’s limit of 64 active notifications.
-* HealthKit integration: DOSE collects background physiological and activity data—such as heart rate, step count, and sleep—from HealthKit with user permission.
-* Code-based study configuration: Researchers modify the study setup by opening the Xcode project and editing predefined configuration lines (e.g., prompt schedule, Firebase URL, questions). No external config files or admin dashboard are used.
-* No iPhone or Firebase SDK dependency: The app runs independently on the watch and interacts with Firebase purely through REST API calls—making it lightweight, portable, and easier to maintain.
+* **In-watch surveys**: The app displays scheduled ESM prompts directly on the Apple Watch using local notifications and a simple tap-based interface. Questions, options, and prompt timing are fully customizable in code.
+* **Randomized prompt scheduling**: A custom RandomScheduler class selects survey prompt times randomly within specified time windows, enhancing ecological validity.
+* **Notification management**: The framework dynamically manages scheduled notifications to work around watchOS’s limit of 64 active notifications.
+* **HealthKit integration**: DOSE collects background physiological and activity data—such as heart rate, step count, and sleep—from HealthKit with user permission.
+* **Local-first data handling**: All survey responses and sensor readings are first saved securely on the watch. The app then attempts to sync this data to your Firebase Realtime Database via REST API when a network connection becomes available.
+* **Code-based study configuration**: Researchers modify the study setup by opening the Xcode project and editing predefined configuration lines (e.g., prompt schedule, Firebase URL, questions). No external config files or admin dashboard are used.
+* **No iPhone or Firebase SDK dependency**: The app runs independently on the watch and interacts with Firebase purely through REST API calls—making it lightweight, portable, and easier to maintain.
 
 ---
 
