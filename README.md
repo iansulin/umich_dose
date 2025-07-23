@@ -1,4 +1,4 @@
-## Hey there!
+## DOSE: A Framework for Apple Watch-Based ESM/EMA & Health Data Collection
 
 **DOSE** is a flexible framework for building your own Apple Watch app for real-time surveys and health data collection (no coding required).
 
