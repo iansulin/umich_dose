@@ -31,10 +31,10 @@ This project provides a customizable Apple Watch-based framework for collecting 
     ```
 4. Set Firebase rules to allow your desired level of access. Example (for dev/testing):
     ```json
-      {
-      "rules": {
-        ".read": true,
-        ".write": true
+    {
+    "rules": {
+      ".read": true,
+      ".write": true
       }
     }
     ```
