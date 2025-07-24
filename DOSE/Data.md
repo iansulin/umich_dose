@@ -109,7 +109,7 @@ When viewing your Firebase Realtime Database, you’ll notice that each event (s
 
 ---
 
-### **Why Are Notifications and Responses Logged Separately?**
+### 1.02.4. **Why Are Notifications and Responses Logged Separately?**
 
 By storing notifications and responses in separate logs, DOSE allows you to detect partial interactions. For example, if a notification was opened but no corresponding response was submitted, it may suggest:
 * The participant got distracted and never completed the survey.
