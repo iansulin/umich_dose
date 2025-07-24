@@ -14,7 +14,7 @@ This page explains how data moves through the **DOSE** Apple Watch app — from 
 
 a. **Prompt Scheduling & Triggering**
 
-* The DOSE app schedules notification prompts using a custom algorithm (to work around watchOS’s 64-notification limit).
+* The DOSE app schedules notification prompts using a custom algorithm (to work around watchOS’s 64-notification limit and to support randomized timing).
 * Prompts are delivered at random or fixed intervals, depending on study settings configured in the code.
 
 b. **User Response (Active Data)**
