@@ -38,7 +38,7 @@ The app then schedules one randomized prompt within each window.
 
 **Example 3.** Survey start time = 5 PM; Number of windows per day = 4; Window length (hours) = 1
 
-| Window start times daily | Selected schedule (random prompt time) |
+| Window start times | Selected schedule (random prompt time) |
 |-------------------------|---------------------------------------|
 | 5:00 PM                 | 5:10 PM                               |
 | 6:00 PM                | 6:38 PM                              |
