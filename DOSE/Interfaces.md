@@ -28,7 +28,7 @@ All screens are optimized for single-tap interactions and glanceable readability
 | **Numeric Keypad** | Allows users to input numeric responses via a keypad	| Entering a specific count or rating (e.g., 0-100) | "How many minutes ago did you last eat?" | "7.5" |
 | **Scribble/Dictation** | Supports freeform text input via scribble, voice dictation, or the default keyboard | Free text, open-ended responses or notes | "Please describe your current mood." | "Feeling calm and relaxed." |
 | **Step Slider** | A linear slider with discrete steps that snaps to predetermined points along the scale | Discrete numeric scales (e.g., 2, 4, ..., 10)| "On a scale of 1 to 10, how stressed are you?" | "8" |
-| **Circular Slider** | A radial slider optimized for the watch’s crown, allowing smooth selection of values along a circular path | Continuous or fine-grained numeric values within a fixed range | "Rotate the dial to indicate the angle of sunlight exposure right now (0° to 360°)." | 135 |
+| **Circular Slider** | A radial slider optimized for the watch’s crown, allowing smooth selection of values along a circular path | Continuous or fine-grained numeric values within a fixed range | "Rotate the dial to indicate the angle of sunlight exposure right now (0° to 360°)." | "135" |
 | **Scrollable List** | A vertically scrollable list of options allowing single selection | Single-choice from predefined categories | "Select the activity you are doing right now." | "Walking" |
 
 ---
