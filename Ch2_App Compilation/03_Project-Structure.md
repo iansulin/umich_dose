@@ -1,4 +1,4 @@
-## 1.03. Overview of Project Structure
+## 2.03. Overview of Project Structure
 
 When opening the DOSE app Xcode project, you’ll find a clean and modular file organization that supports easy navigation and extensibility. The project includes one main app entry point and three primary folders that group related functionality.
 
@@ -26,15 +26,23 @@ DOSEWatchApp/
     └── FirebaseManager.swift
 ```
 
+## Section List
+
+- [2.03.1. Main Entry Point](#2031-main-entry-point)
+- [2.03.2. Views](#2032-views)
+- [2.03.3. SurveyModules](#2033-surveymodules)
+- [2.03.4. Utilities](#2034-utilities)
+
+
 ---
 
-### 1.03.1. Main Entry Point
+### 2.03.1. Main Entry Point
 
 - **`DoseApp.swift`**: This is the main application file. It initializes the app’s lifecycle, sets up the environment, and launches the initial interface (`MainView.swift`).
 
 ---
 
-### 1.03.2. Views
+### 2.03.2. Views
 
 This folder contains the core user interface screens presented to participants:
 - **`MainView.swift`** – The primary view users see when opening the app. It displays the current state and provides access to survey participation.
@@ -43,7 +51,7 @@ This folder contains the core user interface screens presented to participants:
 
 ---
 
-### 1.03.3. SurveyModules
+### 2.03.3. SurveyModules
 
 Contains reusable SwiftUI components for delivering various types of survey questions. Each module represents a different input modality:
 - **`NumericKeypad.swift`** – For numeric responses (e.g., hours of sleep).
@@ -54,7 +62,7 @@ Contains reusable SwiftUI components for delivering various types of survey ques
 
 ---
 
-### 1.03.4. Utilities
+### 2.03.4. Utilities
 
 These utility classes encapsulate essential logic for data flow, health tracking, and backend connectivity:
 - **`SurveyManager.swift`** – Handles survey scheduling, state management, and delivery logic.
