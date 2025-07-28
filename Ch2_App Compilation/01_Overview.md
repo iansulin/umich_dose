@@ -1,13 +1,20 @@
 
 
 
-## 1.01. Overview: Using the DOSE Framework
+## 2.01. Overview: Using the DOSE Framework
 
 This section guides you through how to set up and run the DOSE Apple Watch framework for collecting survey responses and health data. While you don’t need to write Swift code, you’ll need to use Xcode to open the project, adjust configuration files for your study (like surveys and schedules), and build the app onto a real Apple Watch. Whether you’re a researcher or part of a clinical team, this guide will walk you through the full process, step by step.
 
+### Section List
+
+- [2.01.1. Who This Is For](#2011-who-this-is-for)
+- [2.01.2. Why Apple Watch?](#2012-why-apple-watch)
+- [2.01.3. How the DOSE Framework Works?](#2013-how-the-dose-framework-works)
+- [2.01.4. What You Will Learn](#2014-what-you-will-learn)
+
 ---
 
-### 1.01.1. Who This Is For
+### 2.01.1. Who This Is For
 
 The DOSE framework is designed for researchers, clinicians, and developers who want to collect real-time behavioral or health data using the Apple Watch. It's especially useful for those conducting experience sampling or ecological momentary assessment (ESM/EMA) studies, clinical trials, or behavioral interventions. Whether you're part of an academic lab, healthcare organization, or digital health startup, DOSE provides a customizable foundation to build your own wrist-based study app—without starting from scratch. Some familiarity with Xcode and Firebase setup is recommended, but you don’t need to be an experienced iOS developer to get started.
 
@@ -22,7 +29,7 @@ Examples include:
 
 ---
 
-### 1.01.2. Why Apple Watch?
+### 2.01.2. Why Apple Watch?
 
 Until recently, most open-source ESM/EMA tools were built for Android—largely because of its flexibility, open APIs, and fewer platform restrictions. However, many participants, especially in clinical and general population studies, use Apple devices, and the Apple Watch is often more acceptable for continuous wear than smartphones. Yet despite its popularity, the Apple Watch ecosystem lacked open, researcher-friendly tools for passive and active data collection. Additionally, watchOS does not natively support randomized prompt scheduling and enforces a hard limit of 64 scheduled notifications, which presents challenges for study designs requiring frequent or random prompts for an extended period.
 
@@ -30,7 +37,7 @@ The DOSE framework was created to fill this gap. The Apple Watch offers a powerf
 
 ---
 
-### 1.01.3. How the DOSE Framework Works? 
+### 2.01.3. How the DOSE Framework Works? 
 
 The DOSE framework is a standalone Apple Watch app that enables real-time data collection through both passive sensing and active self-report. It is designed for researchers who want to run custom studies on Apple Watch without building an app from scratch. Study parameters—such as survey questions, scheduling, and Firebase database paths—are defined directly within the project files and can be adjusted by modifying the code.
 
@@ -46,7 +53,7 @@ The DOSE framework is a standalone Apple Watch app that enables real-time data c
 
 ---
 
-### 1.01.4. What You Will Learn
+### 2.01.4. What You Will Learn
 
 In the following chapters, you’ll learn how to set up, customize, and deploy the DOSE framework to run your own Apple Watch–based ESM/EMA study. This guide is structured to support researchers, designers, and study coordinators—especially those without formal training in Swift or app development.
 
