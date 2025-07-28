@@ -8,6 +8,14 @@ This page explains how data moves through the **DOSE** Apple Watch app — from 
 * **Firebase Realtime Database**: Cloud-based storage for survey responses, sensor logs, and system events.
 * **Local Storage**: Temporary on-device storage for offline robustness.
 
+### Section List
+
+- [1.02.1. Data Flow Overview](#1021-data-flow-overview)
+- [1.02.2. What is Firebase Realtime Database?](#1022-what-is-firebase-realtime-database)
+- [1.02.3. Database Structure](#1023-database-structure)
+- [1.02.4. Why Are Notifications and Responses Logged Separately?](#1024-why-are-notifications-and-responses-logged-separately)
+
+
 ---
 
 ### 1.02.1. Data Flow Overview
