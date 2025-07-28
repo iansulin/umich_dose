@@ -1,4 +1,4 @@
-## 1.05. Customizing Notifications with `NotificationManager.swift`
+## 2.05. Customizing Notifications with `NotificationManager.swift`
 
 The `NotificationManager.swift` file is where you can control **when, how often, and at what times survey notifications are sent** to the Apple Watch. If you're customizing your study schedule, this is the main file to modify. You'll find a clearly marked section near the top of the file that looks like this:
 
@@ -23,10 +23,23 @@ These variables represent the **customizable parameters** that control the notif
 
 Together, these parameters enable flexible control over the timing, frequency, and daily distribution of survey prompts to study participants.
 
+### Section List
+
+- [2.05.1. How Many Days of Notifications Are Scheduled?](#2051-how-many-days-of-notifications-are-scheduled)
+- [2.05.2. When Does the App Reschedule More Notifications?](#2052-when-does-the-app-reschedule-more-notifications)
+- [2.05.3. What Hours Can Participants Receive Surveys?](#2053-what-hours-can-participants-receive-surveys)
+- [2.05.4. How Are Notification Times Randomized?](#2054-how-are-notification-times-randomized)
+- [2.05.5. How Does the App Handle Scheduling Failures or Restarts?](#2055-how-does-the-app-handle-scheduling-failures-or-restarts)
+- [2.05.6. Where Are Notification Logs Saved?](#2056-where-are-notification-logs-saved)
+- [2.05.7. Test Mode for Scheduling a Single Notification](#2057-test-mode-for-scheduling-a-single-notification)
+- [2.05.8. Apple Watch Notification Limit: Stay Below 64](#2058-apple-watch-notification-limit-stay-below-64)
+- [Notification Scheduling Parameters Summary](#notification-scheduling-parameters-summary)
+
+
 
 ---
 
-### 1.05.1. How Many Days of Notifications Are Scheduled?
+### 2.05.1. How Many Days of Notifications Are Scheduled?
 
 At the top of the file, you’ll see:
 
@@ -41,7 +54,7 @@ This controls how far into the future the app pre-schedules notifications (in th
 
 ---
 
-### 1.05.2. When Does the App Reschedule More Notifications?
+### 2.05.2. When Does the App Reschedule More Notifications?
 
 ```swift
 let daysBeforeSchedulingMore = 2
@@ -52,7 +65,7 @@ This means the app will a**utomatically add more survey notifications** when the
 
 ---
 
-### 1.05.3. What Hours Can Participants Receive Surveys?
+### 2.05.3. What Hours Can Participants Receive Surveys?
 
 ```swift
 let firstWindowStartHour = 8 // 8:00 AM
@@ -68,7 +81,7 @@ These parameters define **daily time windows** when the app may trigger a survey
 
 ---
 
-### 1.05.4. How Are Notification Times Randomized?
+### 2.05.4. How Are Notification Times Randomized?
 
 Each scheduled notification is placed at a **random time** within its assigned window. This is done using:
 
@@ -82,7 +95,7 @@ This ensures that participants don’t receive notifications at the same exact t
 
 ---
 
-### 1.05.5. How Does the App Handle Scheduling Failures or Restarts?
+### 2.05.5. How Does the App Handle Scheduling Failures or Restarts?
 
 If the app restarts, or if no schedule exists, it will automatically:
 
@@ -94,7 +107,7 @@ This logic is inside `checkAndScheduleNotificationsIfNeeded()`.
 
 ---
 
-### 1.05.6. Where Are Notification Logs Saved?
+### 2.05.6. Where Are Notification Logs Saved?
 
 The app logs each **delivered and opened** notification using:
 
@@ -107,7 +120,7 @@ This allows backend researchers to track when participants saw and responded to 
 
 ---
 
-### 1.05.7. Test Mode for Scheduling a Single Notification
+### 2.05.7. Test Mode for Scheduling a Single Notification
 
 At the bottom of the file, you’ll find helper functions like:
 
@@ -120,7 +133,7 @@ This is useful during pilot testing. You can specify a **hard-coded test date an
 
 ---
 
-### 1.05.8. Apple Watch Notification Limit: Stay Below 64
+### 2.05.8. Apple Watch Notification Limit: Stay Below 64
 
 Apple WatchOS limits each app to a **maximum of 64 pending local notifications** at any given time. If you exceed this limit, newer notifications will not be scheduled. To ensure continuous delivery without hitting this cap, the app uses a rolling window approach:
 
@@ -131,7 +144,7 @@ Apple WatchOS limits each app to a **maximum of 64 pending local notifications**
 **Important Consideration:**
 If you choose a high number of notifications per day (e.g. numberOfWindows = 24) and also set maxDaysToSchedule to 3 or more, you might hit the 64 notification cap. For example:
 
-* `24 windows × 3 days = 72` ➜ ❌ too many notifications.
+* `24 windows × 3 days = 72` ➜ Too many notifications.
 
 To stay safe, ensure:
 * `maxDaysToSchedule` × `numberOfWindows` ≤ 60 (buffer recommended)
