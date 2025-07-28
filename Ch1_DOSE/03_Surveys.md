@@ -3,6 +3,14 @@
 
 This chapter describes how the DOSE Apple Watch app supports experience sampling method (ESM) and ecological momentary assessment (EMA) workflows. It focuses on how survey prompts are scheduled, delivered, expired, and logged—all within the constraints of watchOS and without requiring a continuous network connection.
 
+
+### Section List
+
+- [1.03.1. Randomized Prompt Scheduling](#1031-randomized-prompt-scheduling)
+- [1.03.2. Survey Notification](#1032-survey-notification)
+- [1.03.3. Survey Expiration](#1033-survey-expiration)
+- [1.03.4. Notification vs. Response Logging](#1034-notification-vs-response-logging)
+
 ---
 
 ### 1.03.1. Randomized Prompt Scheduling
