@@ -16,7 +16,8 @@ Each survey interface corresponds to a distinct type of question and response op
 
 All screens are optimized for single-tap interactions and glanceable readability, ensuring minimal cognitive load and faster completion time on wrist-based devices. 
 
-![Survey Interfaces](https://raw.githubusercontent.com/iansulin/umich_dose/main/Assets/Survey%20Interfaces.png "Survey Interfaces")
+![Survey Interfaces](https://github.com/iansulin/umich_dose/blob/main/x_Assets/Survey%20Interfaces.png "Survey Interfaces")
+
 
 **Five built-in interfaces** are provided with easily customizable parameters: 
 * (a) **Numeric Keypad**
