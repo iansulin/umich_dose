@@ -1,4 +1,4 @@
-## 1.06. Customizing Surveys with `MainView.swift` and `SurveyModules`
+## 2.06. Customizing Surveys with `MainView.swift` and `SurveyModules`
 
 The DOSE Apple Watch app delivers surveys by dynamically selecting and presenting one of several survey interfaces defined in the **SurveyModules** folder. This selection and presentation logic is centralized in the **`MainView.swift`** file, where the app determines which surveys are available and randomly chooses one to display when it is time to prompt the user.
 
@@ -13,18 +13,18 @@ The DOSE Apple Watch app delivers surveys by dynamically selecting and presentin
 
 ### Table of Contents
 
-- [1.06.1. Selecting Survey Interfaces](#1061-customizing-which-surveys-appear-in-mainviewswift)
-- [1.06.2. Customizing the Numeric Keypad Survey Interface](#1062-customizing-the-numeric-keypad-survey-interface)
-- [1.06.3. Customizing the Scribble/Dictation Survey Interface](#1063-customizing-the-scribbledictation-survey-interface)
-- [1.06.4. Customizing the Step Slider Survey Interface](#1064-customizing-the-step-slider-survey-interface)
-- [1.06.5. Customizing the Circular Slider Survey Interface](#1065-customizing-the-circular-slider-survey-interface)
-- [1.06.5. Scrollable List Interface](#1065-scrollable-list-interface)
-- [1.06.6. Adding a New Survey Interface to the App](#1066-adding-a-new-survey-interface-to-the-app)
+- [2.06.1. Selecting Survey Interfaces](#2061-customizing-which-surveys-appear-in-mainviewswift)
+- [2.06.2. Customizing the Numeric Keypad Survey Interface](#2062-customizing-the-numeric-keypad-survey-interface)
+- [2.06.3. Customizing the Scribble/Dictation Survey Interface](#2063-customizing-the-scribbledictation-survey-interface)
+- [2.06.4. Customizing the Step Slider Survey Interface](#2064-customizing-the-step-slider-survey-interface)
+- [2.06.5. Customizing the Circular Slider Survey Interface](#2065-customizing-the-circular-slider-survey-interface)
+- [2.06.5. Scrollable List Interface](#2065-scrollable-list-interface)
+- [2.06.6. Adding a New Survey Interface to the App](#2066-adding-a-new-survey-interface-to-the-app)
 
 
 ---
 
-### 1.06.1. Customizing Which Surveys Appear in `MainView.swift`
+### 2.06.1. Customizing Which Surveys Appear in `MainView.swift`
 
 ```swift
 // ============================================================================================= //
@@ -68,7 +68,7 @@ let views: [AnyView] = [
 
 ---
 
-### 1.06.2. Customizing the Numeric Keypad Survey Interface
+### 2.06.2. Customizing the Numeric Keypad Survey Interface
 
 The **Numeric Keypad** interface is useful when you want participants to respond using numbers, such as reporting time spent moving, hours of sleep, or pain level.
 
@@ -153,7 +153,7 @@ DigiTextView(placeholder: "Enter minutes", ...)
 
 ---
 
-### 1.06.3. Customizing the Scribble/Dictation Survey Interface
+### 2.06.3. Customizing the Scribble/Dictation Survey Interface
 
 The **Scribble/Dictation** interface is ideal when your study requires open-ended text input, such as mood descriptions, symptom reporting, or qualitative feedback. It supports multiple input methods, including **dictation**, **scribble**, and the **default QWERTY keyboard**, making it versatile and user-friendly on Apple Watch.
 
@@ -242,7 +242,7 @@ TextField("Describe your mood", text: $responseValue)
 
 ---
 
-### 1.06.4. Customizing the Step Slider Survey Interface
+### 2.06.4. Customizing the Step Slider Survey Interface
 
 The **Step Slider** interface is ideal when your study requires participants to provide numeric ratings using a simple, intuitive scale. It is well-suited for Apple Watch, enabling input via digital crown or touch to select a discrete value (e.g., stress level, energy rating, minutes of activity).
 
@@ -389,7 +389,7 @@ This does not limit the range — it only affects the initial display.
 
 ---
 
-### 1.06.5. Customizing the Circular Slider Survey Interface
+### 2.06.5. Customizing the Circular Slider Survey Interface
 
 The **Circular Slider** interface lets participants select a numeric response by rotating a knob along a circular track, ideal for capturing continuous values like duration, intensity, or quantity within a predefined range.
 
@@ -509,7 +509,7 @@ struct Config2 {
 
 ---
 
-### 1.06.5. Scrollable List Interface
+### 2.06.5. Scrollable List Interface
 
 The **Scrollable List** interface is best used when participants need to select a response from a predefined list of _discrete options_, such as frequency ratings or categorical choices. The Apple Watch’s scrollable picker allows fast and precise selection.
 
@@ -629,7 +629,7 @@ var responseOptions = ["Never", "Rarely", "Sometimes", "Often", "Always"]
 
 ---
 
-### 1.06.6 Adding a New Survey Interface to the App
+### 2.06.6 Adding a New Survey Interface to the App
 
 To include a new custom survey screen in the app, follow these two steps:
 
