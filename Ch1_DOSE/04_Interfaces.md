@@ -5,6 +5,11 @@ The DOSE Watch App provides **five customizable survey interface templates**, ea
 
 Each survey interface corresponds to a distinct type of question and response option/scale, such as sliders, multiple choice, or binary responses. At each notification, the app presents one survey randomly selected from a predefined list of surveys, enabling flexible and varied data collection within each prompt.
 
+### Section List
+
+- [1.04.1. Interface Templates](#1041-interface-templates)
+- [1.04.2. Customizability](#1042-customizability)
+
 ---
 
 ### 1.04.1. Interface Templates
@@ -33,7 +38,7 @@ All screens are optimized for single-tap interactions and glanceable readability
 
 ---
 
-### 1.04.2. Customization
+### 1.04.2. Customizability 
 
 Researchers can easily adapt the built-in survey interfaces to suit their study needs. All survey configuration occurs directly in the source code.
 
