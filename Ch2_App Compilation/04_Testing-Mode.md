@@ -1,6 +1,6 @@
-## 1.04. Testing Mode 
+## 2.04. Testing Mode 
 
-In the DOSE Watch App, you’ll find a section near the top of the MainView.swift file that looks like this:
+In the DOSE Watch App, you’ll find a section near the top of the `MainView.swift` file that looks like this:
 
 
 ```swift
@@ -15,9 +15,18 @@ This `isTestingMode` **flag** allows you to toggle the app between two modes:
 - Testing Mode OFF
 
 
+### Section List
+
+- [2.04.1. Testing Mode ON (`isTestingMode = 1`)](#2041-testing-mode-on-istestingmode--1)
+- [2.04.2. Testing Mode OFF (`isTestingMode = 0`)](#2042-testing-mode-off-istestingmode--0)
+- [2.04.3. How to Change the Mode](#2043-how-to-change-the-mode)
+- [2.04.4. When Should You Use Testing Mode?](#2044-when-should-you-use-testing-mode)
+
+
+
 ---
 
-### 1.04.1. Testing Mode ON (`isTestingMode = 1`)
+### 2.04.1. Testing Mode ON (`isTestingMode = 1`)
 
 This mode is intended for **developers or researchers during setup or pilot testing**. When testing mode is ON, the app shows **extra debug buttons** on the watch screen, including:
 
@@ -33,7 +42,7 @@ These debug tools help ensure that:
 
 ---
 
-### 1.04.2. Testing Mode OFF (`isTestingMode = 0`)
+### 2.04.2. Testing Mode OFF (`isTestingMode = 0`)
 
 This is the **default setting for real-world deployment** with participants. When the app is in production mode:
 
@@ -44,7 +53,7 @@ This prevents any accidental interference with notification scheduling or app lo
 
 ---
 
-### 1.04.3. How to Change the Mode
+### 2.04.3. How to Change the Mode
 
 To change the testing mode:
 
@@ -67,7 +76,7 @@ let isTestingMode = 0
 
 ---
 
-### 1.04.4. When Should You Use Testing Mode?
+### 2.04.4. When Should You Use Testing Mode?
 
 Use **testing mode**:
 - During app setup or testing before a study launch.
