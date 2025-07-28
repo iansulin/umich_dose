@@ -1,7 +1,7 @@
 
 
 
-## 1.02. Firebase Setup
+## 2.02. Firebase Setup
 
 **Before you begin:**
 
@@ -13,7 +13,7 @@ However, there are still **a few things you must do before getting started**. Yo
 
 ---
 
-### 1.02.1. Firebase Setup
+### 2.02.1. Firebase Setup
 
 1. **Create a Firebase Project:**
       * Go to [Firebase Console](https://console.firebase.google.com) and create a new project.
